@@ -50,6 +50,11 @@ class DesafioAtletas:
         numero = len(listaAtletaPeso)
         return (soma/numero)
 
+    def calcularMaiorAltura():
+        indiceAltura = listaAtletaAltura.index(max(listaAtletaAltura))
+        return listaAtletaNome[indiceAltura]
+         
+
 
 if __name__=="__main__":
     # instanciando o objeto
@@ -75,4 +80,5 @@ if __name__=="__main__":
         quantidade -= 1
         
         
-    print(DesafioAtletas.calcularPesoMedio())
+    print(f"Peso medio: {DesafioAtletas.calcularPesoMedio()}")
+    print(f"Maior altura: {DesafioAtletas.calcularMaiorAltura()}")
