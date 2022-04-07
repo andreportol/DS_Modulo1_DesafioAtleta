@@ -53,8 +53,13 @@ class DesafioAtletas:
     def calcularMaiorAltura():
         indiceAltura = listaAtletaAltura.index(max(listaAtletaAltura))
         return listaAtletaNome[indiceAltura]
-         
+        # aprimorar metodo: pode haver elementos repetidos
 
+    def exibirRelatorio():
+        print(f"Peso medio: {DesafioAtletas.calcularPesoMedio()}")
+        print(f"Maior altura: {DesafioAtletas.calcularMaiorAltura()}")
+        
+   
 
 if __name__=="__main__":
     # instanciando o objeto
@@ -78,7 +83,7 @@ if __name__=="__main__":
         listaAtletaPeso.insert(i,atleta.peso)
         i += 1
         quantidade -= 1
+
+    DesafioAtletas.exibirRelatorio()   
         
-        
-    print(f"Peso medio: {DesafioAtletas.calcularPesoMedio()}")
-    print(f"Maior altura: {DesafioAtletas.calcularMaiorAltura()}")
+    
