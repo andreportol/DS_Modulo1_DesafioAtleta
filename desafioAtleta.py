@@ -45,6 +45,10 @@ class DesafioAtletas:
                 self.peso = float(input("Peso: "))
             return self.peso                  
 
+    def calcularPesoMedio():
+        soma = sum(listaAtletaPeso)
+        numero = len(listaAtletaPeso)
+        return (soma/numero)
 
 
 if __name__=="__main__":
@@ -71,13 +75,4 @@ if __name__=="__main__":
         quantidade -= 1
         
         
-    j = 0 # indice da lista
-    for a in listaAtletaNome:
-       print(f"Nome: {a}")
-       print(f"Sexo: {listaAtletaSexo[j]}")
-       print(f"Altura: {listaAtletaAltura[j]}")
-       print(f"Peso: {listaAtletaPeso[j]}")
-       j += 1
-
-        
-    
+    print(DesafioAtletas.calcularPesoMedio())
