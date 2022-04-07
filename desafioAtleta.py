@@ -56,10 +56,14 @@ class DesafioAtletas:
         # aprimorar metodo: pode haver elementos repetidos
 
     def exibirRelatorio():
-        print(f"Peso medio: {DesafioAtletas.calcularPesoMedio()}")
-        print(f"Maior altura: {DesafioAtletas.calcularMaiorAltura()}")
-        
-   
+        print(f"Peso medio: {DesafioAtletas.calcularPesoMedio()}kg")
+        print(f"Maior altura: {DesafioAtletas.calcularMaiorAltura()}m")
+        print(f"Porcentagem de homens: {DesafioAtletas.calcularPorcentagemHomens()}%")
+    
+    def calcularPorcentagemHomens():
+        numero1 = listaAtletaSexo.count('M')
+        numero2 = len(listaAtletaSexo)
+        return (numero1/numero2)*100
 
 if __name__=="__main__":
     # instanciando o objeto
