@@ -25,19 +25,59 @@ class DesafioAtletas:
                 else:
                     verificador = True
     
-    def altura(self):
-        self.altura1 = float(input("Altura: "))
-        if(self.altura1 > 0):
-            return self.altura1
+    def validarAltura(self):
+        self.altura = float(input("Altura: "))
+        if(self.altura > 0):
+            return self.altura
         else:
-            while self.altura1 <= 0:
+            while self.altura <= 0:
                 print("Digite um valor positivo maior que zero!")
-                self.altura1 = float(input("Altura: "))
-            return self.altura1        
-                        
+                self.altura = float(input("Altura: "))
+            return self.altura        
+
+    def validarPeso(self):
+        self.peso = float(input("Peso: "))
+        if(self.peso > 0):
+            return self.peso
+        else:
+            while self.peso <= 0:
+                print("Digite um valor positivo maior que zero!")
+                self.peso = float(input("Peso: "))
+            return self.peso                  
+
+
+
 if __name__=="__main__":
-    quantidade1 = DesafioAtletas.validarQuantidade()
-    if quantidade1 > 0:
-        # instanciando o objeto
-        atleta1 = DesafioAtletas()
-        print(atleta1.validarSexo())
+    # instanciando o objeto
+    atleta = DesafioAtletas()
+    quantidade = DesafioAtletas.validarQuantidade()
+    i = 0   # indice da listaAtleta
+    #  criando 4 listas
+    listaAtletaNome = []
+    listaAtletaSexo = []
+    listaAtletaAltura = []
+    listaAtletaPeso = []
+        
+    while quantidade > 0:
+        atleta.nome = input("Nome: ")
+        atleta.sexo = atleta.validarSexo()
+        atleta.altura = atleta.validarAltura()
+        atleta.peso = atleta.validarPeso()
+        listaAtletaNome.insert(i,atleta.nome)
+        listaAtletaSexo.insert(i,atleta.sexo)
+        listaAtletaAltura.insert(i,atleta.altura)
+        listaAtletaPeso.insert(i,atleta.peso)
+        i += 1
+        quantidade -= 1
+        
+        
+    j = 0 # indice da lista
+    for a in listaAtletaNome:
+       print(f"Nome: {a}")
+       print(f"Sexo: {listaAtletaSexo[j]}")
+       print(f"Altura: {listaAtletaAltura[j]}")
+       print(f"Peso: {listaAtletaPeso[j]}")
+       j += 1
+
+        
+    
