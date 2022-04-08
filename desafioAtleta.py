@@ -56,14 +56,41 @@ class DesafioAtletas:
         # aprimorar metodo: pode haver elementos repetidos
 
     def exibirRelatorio():
-        print(f"Peso medio: {DesafioAtletas.calcularPesoMedio()}kg")
-        print(f"Maior altura: {DesafioAtletas.calcularMaiorAltura()}m")
-        print(f"Porcentagem de homens: {DesafioAtletas.calcularPorcentagemHomens()}%")
+        print("**************RELATORIO****************")
+        print(f"Peso medio: {DesafioAtletas.calcularPesoMedio():.2f} kg")
+        print(f"Maior altura: {DesafioAtletas.calcularMaiorAltura()} ")
+        print(f"Porcentagem de homens: {DesafioAtletas.calcularPorcentagemHomens():.2f}%")
+        if DesafioAtletas.calcularMediaAlturaMulheres() == 0:
+            print("")
+        else:
+            print(f"Altura media mulheres: {DesafioAtletas.calcularMediaAlturaMulheres():.2f} m")
     
     def calcularPorcentagemHomens():
         numero1 = listaAtletaSexo.count('M')
         numero2 = len(listaAtletaSexo)
         return (numero1/numero2)*100
+
+    def calcularMediaAlturaMulheres():
+        contagem = listaAtletaSexo.count('F')
+        if contagem == 0:
+            print("Não há mulheres cadastradas.")
+            return 0
+        else:
+            contadorElementos = 0
+            valorAlturaFinal = 0
+            indice = 0
+            for _ in listaAtletaSexo:
+                s = listaAtletaSexo[indice]
+                if s == 'F':
+                    #indice1 = listaAtletaSexo[indice]
+                    valorAltura = listaAtletaAltura[indice]
+                    valorAlturaFinal = valorAltura + valorAlturaFinal
+                contadorElementos += 1
+                indice += 1
+            mediaAltura = (valorAlturaFinal) / (contadorElementos - 1)
+            return mediaAltura 
+
+
 
 if __name__=="__main__":
     # instanciando o objeto
